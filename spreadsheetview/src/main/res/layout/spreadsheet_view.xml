@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SpreadsheetActivity"
+    android:id="@+id/spreadsheet_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff1f1f1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp">
+
+        <View
+            android:id="@+id/spreadsheet_corner_spacer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#ffffffff" />
+
+        <View
+            android:id="@+id/spreadsheet_view_vertical_spacer_top"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#fff1f1f1" />
+
+        <HorizontalScrollView
+            android:id="@+id/spreadsheet_column_header_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_gridtableColumnHeaderLayout"
+                    android:layout_width="992dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <GridView
+                        android:id="@+id/spreadsheet_column_header_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#fff1f1f1"
+                        android:columnWidth="124dp"
+                        android:horizontalSpacing="1dp"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </FrameLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#fff1f1f1"
+        android:orientation="horizontal">
+
+        <GridView
+            android:id="@+id/spreadsheet_row_header_view"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#fff1f1f1"
+            android:columnWidth="40dp"
+            android:numColumns="1"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbars="none" />
+
+        <View
+            android:id="@+id/spreadsheet_view_vertical_spacer_bottom"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#fff1f1f1" />
+
+        <HorizontalScrollView
+            android:id="@+id/spreadsheet_mainHorizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_gridtableLayout"
+                    android:layout_width="992dp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.dogfishsoftware.shanegianelli.spreadsheetview.views.SpreadsheetGridView
+                        android:id="@+id/spreadsheet_grid_view"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#f1f1f1"
+                        android:columnWidth="124dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="1dp"
+                        android:numColumns="8"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="horizontal|vertical" />
+
+                </LinearLayout>
+                <!--</LinearLayout>-->
+            </FrameLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+</LinearLayout>
